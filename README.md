@@ -1,5 +1,5 @@
 # Process Ghosting
-Process Ghosting Injection techinique written in C#.
+Process Ghosting Injection technique written in C#.
 
 #### POC Image:
 ![alt text](https://i.imgur.com/ivu0X7G.png)

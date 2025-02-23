@@ -25,3 +25,7 @@ string targetPath = Path.Combine(winDir, "System32", "calc.exe");
 string windowName = "aespa";
 string desktopInfoValue = @"WinSta0\Default";
 ```
+#### References
+- https://github.com/hasherezade/process_ghosting
+- https://github.com/Wra7h/SharpGhosting
+- https://whokilleddb.github.io/blogs/posts/process-ghosting/

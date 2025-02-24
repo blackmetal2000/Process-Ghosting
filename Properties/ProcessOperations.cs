@@ -5,19 +5,19 @@ namespace pi
 {
     class ProcessOperations
     {
-		private static IntPtr CreateUnicodeStruct(string data)
-		{
-			Win32.UNICODE_STRING UnicodeObject = new Win32.UNICODE_STRING();
+	private static IntPtr CreateUnicodeStruct(string data)
+	{
+		Win32.UNICODE_STRING UnicodeObject = new Win32.UNICODE_STRING();
 
-			UnicodeObject.Length = Convert.ToUInt16(data.Length * 2);
-			UnicodeObject.MaximumLength = Convert.ToUInt16(UnicodeObject.Length + 1);
+		UnicodeObject.Length = Convert.ToUInt16(data.Length * 2);
+		UnicodeObject.MaximumLength = Convert.ToUInt16(UnicodeObject.Length + 1);
 
-			UnicodeObject.buffer = Marshal.StringToHGlobalUni(data);
-			IntPtr InMemoryStruct = Marshal.AllocHGlobal(16);
+		UnicodeObject.buffer = Marshal.StringToHGlobalUni(data);
+		IntPtr InMemoryStruct = Marshal.AllocHGlobal(16);
 
-			Marshal.StructureToPtr(UnicodeObject, InMemoryStruct, true);
-			return InMemoryStruct;
-		}
+		Marshal.StructureToPtr(UnicodeObject, InMemoryStruct, true);
+		return InMemoryStruct;
+	}
 
         private static void WriteMemory(IntPtr processHandle, IntPtr baseAddress, IntPtr buffer, int size)
         {
